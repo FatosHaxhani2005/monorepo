@@ -1,1 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    function showSelectedValues() {
+      var selectedValues = [];
+      var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+      for (var i = 0; i < checkboxes.length; i++) {
+        selectedValues.push(checkboxes[i].value);
+      }
+      alert("Selected values: " + selectedValues.join(", "));
+    }
+  </script>
+</head>
+<body>
+  <form>
+    <label><input type="checkbox" value="Internship">Internship</label>
+    <label><input type="checkbox" value="Pabau">Pabau</label>
+    <label><input type="checkbox" value="Employment">Employment</label>
+    <label><input type="checkbox" value="Career">Career</label>
 
+    <button type="button" onclick="showSelectedValues()">Show selected values</button>
+  </form>
+
+<style>
+    label {
+      display: block;
+    }
+  </style>
+  <script>
+    function shuffleValues() {
+      var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      var parent = checkboxes[0].parentNode;
+      for (var i = checkboxes.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        parent.insertBefore(checkboxes[j].parentNode, checkboxes[i].parentNode);
+      }
+    }
+  </script>
+</head>
+<body>
+  <form>
+    <label><input type="checkbox" value="Internship">Internship</label>
+    <label><input type="checkbox" value="Pabau">Pabau</label>
+    <label><input type="checkbox" value="Employment">Employment</label>
+    <label><input type="checkbox" value="Career">Career</label>
+
+    <button type="button" onclick="shuffleValues()">Shuffle Values</button>
+  </form>
+
+<style>
+    label {
+      display: block;
+    }
+  </style>
+  <script>
+    function changeValues() {
+      var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      var values = ["Internship", "Pabau", "Employment", "Career"];
+      for (var i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].value = values[i];
+        checkboxes[i].nextSibling.data = values[i]; // Update the label text as well
+      }
+    }
+  </script>
+</head>
+<body>
+  <form>
+    <label><input type="checkbox" value="Internship">Original Value 1</label>
+    <label><input type="checkbox" value="Pabau">Original Value 2</label>
+    <label><input type="checkbox" value="Employment">Original Value 3</label>
+    <label><input type="checkbox" value="Career">Original Value 4</label>
+
+    <button type="button" onclick="changeValues()">Change Values</button>
+  </form>
+
+
+
+
+</body>
+</html>
